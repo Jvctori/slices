@@ -142,4 +142,17 @@ func main() {
 		}
 	}
 	fmt.Println(twoD)
+
+	// slices operators
+	// slice[low:high]
+	sliceT := sliceCp[2:5]
+	fmt.Println("sliceCp:", sliceCp)
+	fmt.Println("sliceT := sliceCp[2:5]:")
+	fmt.Println(sliceT)
+	// observe que o elemento de indice 5 não é incluído
+	// ou seja se quisesse incluí-lo deveria ser [2:6]
+	// o elemento de indice 2 foi incluído, isso so acontece com o ultimo elemento que vocẽ deseja incluir!
+
+	fmt.Println("The capacity of the sliceT is:", cap(sliceT))
+	fmt.Println("The len of sliceT is:", len(sliceT))
 }
