@@ -156,8 +156,13 @@ func main() {
 	// Capacity: cap()
 	// quanto a slice pode ser expandida
 	// len = 3, mas cap=5
-	// pois a array original possui
-	// ou seja, atualmente possui 3 elementos mas podendo expandir para 5
+	// len(sliceCp) = 7, cap(sliceCp) = 7
+	// ou seja cap(sliceT) = 5, pois é cap(sliceCp) - indice inicial (elementos iniciais declarados [2:5])
+	// ou seja, atualmente possui 3 elementos, mas podendo expandir para 5
+
+	fmt.Println("The capacity of the sliceCp is:", cap(sliceCp))
+	fmt.Println("The len of sliceCp is:", len(sliceCp))
+
 	fmt.Println("The capacity of the sliceT is:", cap(sliceT))
 	fmt.Println("The len of sliceT is:", len(sliceT))
 }
