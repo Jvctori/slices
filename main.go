@@ -87,5 +87,59 @@ func main() {
 	}
 
 	sliceBool := slices.Equal(slice1, sliceCp)
+
 	fmt.Println("É verdade que slice1 é igual a sliceCp?", sliceBool)
+
+	// Multidimensionals slices:
+	twoD := make([][]int, 3)
+	for i := 0; i < 3; i++ {
+		// Aumentando a quantidade de elementos na slice Multidimensionals
+		// ...usando o indice do primeiro for, e acrescentando mais um...
+		// ... ou seja, primeira iteração a quantidade de elemetnos será 1
+		// ... segunda será 2... e a ultima será 3
+		// resultando em: [[0][1, 2][2, 3, 4]]
+
+		// innerLen representa a quantidade de elementos criados por elementos na slice
+		// representa o tamanho das subslices
+		// primeira iteração = 1, pois innerLen = 0 + 1
+		// segunda iteração = 2, pois innerLen = 1 + 1
+		// terceira iteração = 3, pois innerLen = 2 + 1
+		innerLen := i + 1
+
+		// cria uma slice para cada elemento na slice twoD
+		// aumentando em um a quantidade de elemento na proxima slice
+		// innerLen = i + 1
+		// ... a cada iteração do loop externo
+		twoD[i] = make([]int, innerLen)
+
+		// primeira iteração do loop de fora(innerLen=1):
+		// primerira iteração do loop de dentro:
+		// o primeiro e unico valor será 0, pois i=0 e j=0
+		// loop interno acaba
+
+		// segunda iteração do loop de fora:
+		// primeira iteração do loop de dentro:
+		// o primeiro valor da segunda slice será 1
+		// pois i=1 e j=0
+		// segunda iteração do loop de dentro(innerlen=2):
+		// o segundo valor será 2 pois i=1 e j=1
+		// loop interno acaba
+
+		// terceira iteração do loop de fora(innerLen=3):
+		// primeira iteração:
+		// preenche o primeiro valor do terceiro elemento com:
+		// 2, pois i=2 e j=0
+		// segunda iteração:
+		// preenche o segundo valor do terceiro elemento com:
+		// 3, pois i=2 e j=1
+		// terceira iteração e ultima:
+		// preenche o terceiro valor do terceiro elemento com:
+		// 4, pois i=2 e j=2
+		// loop interno acaba junto com o externo, pois já pecorreu toda a slcie
+
+		for j := 0; j < innerLen; j++ {
+			twoD[i][j] = i + j
+		}
+	}
+	fmt.Println(twoD)
 }
