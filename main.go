@@ -153,6 +153,11 @@ func main() {
 	// ou seja se quisesse incluí-lo deveria ser [2:6]
 	// o elemento de indice 2 foi incluído, isso so acontece com o ultimo elemento que vocẽ deseja incluir!
 
+	// Capacity: cap()
+	// quanto a slice pode ser expandida
+	// len = 3, mas cap=5
+	// pois a array original possui
+	// ou seja, atualmente possui 3 elementos mas podendo expandir para 5
 	fmt.Println("The capacity of the sliceT is:", cap(sliceT))
 	fmt.Println("The len of sliceT is:", len(sliceT))
 }
