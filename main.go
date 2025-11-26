@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 // Estudos de slice
 func main() {
@@ -63,4 +66,26 @@ func main() {
 	var nilSlice []int
 
 	fmt.Println(nilSlice)
+
+	for i, v := range slice1 {
+		fmt.Println("Index:", i)
+		fmt.Println("Value:", v)
+	}
+	fmt.Println(slice1[0])
+
+	slice1[0] = 15
+
+	fmt.Println(slice1[0])
+
+	// Comparando slices
+	// slices.Equal(slice_a_ser_comparada, slice_de_comparação)
+	// slices.Equal(s1, s2) bool
+	if slices.Equal(slice1, sliceCp) {
+		fmt.Println("Slice1 is equal to sliceCp")
+	} else {
+		fmt.Println("Slice1 is not equal to sliceCp")
+	}
+
+	sliceBool := slices.Equal(slice1, sliceCp)
+	fmt.Println("É verdade que slice1 é igual a sliceCp?", sliceBool)
 }
