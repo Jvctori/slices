@@ -112,33 +112,34 @@ func main() {
 		// ... a cada iteração do loop externo
 		twoD[i] = make([]int, innerLen)
 
-		// primeira iteração do loop de fora(innerLen=1):
-		// primerira iteração do loop de dentro:
-		// o primeiro e unico valor será 0, pois i=0 e j=0
-		// loop interno acaba
-
-		// segunda iteração do loop de fora:
-		// primeira iteração do loop de dentro:
-		// o primeiro valor da segunda slice será 1
-		// pois i=1 e j=0
-		// segunda iteração do loop de dentro(innerlen=2):
-		// o segundo valor será 2 pois i=1 e j=1
-		// loop interno acaba
-
-		// terceira iteração do loop de fora(innerLen=3):
-		// primeira iteração:
-		// preenche o primeiro valor do terceiro elemento com:
-		// 2, pois i=2 e j=0
-		// segunda iteração:
-		// preenche o segundo valor do terceiro elemento com:
-		// 3, pois i=2 e j=1
-		// terceira iteração e ultima:
-		// preenche o terceiro valor do terceiro elemento com:
-		// 4, pois i=2 e j=2
-		// loop interno acaba junto com o externo, pois já pecorreu toda a slcie
-
 		for j := 0; j < innerLen; j++ {
 			twoD[i][j] = i + j
+
+			// primeira iteração do loop de fora(innerLen=1):
+			// primerira iteração do loop de dentro:
+			// o primeiro e unico valor será 0, pois i=0 e j=0
+			// loop interno acaba, pois o tamanho maximo da primeira slice é 1 elemento
+
+			// segunda iteração do loop de fora:
+			// primeira iteração do loop de dentro:
+			// o primeiro valor da segunda slice será 1
+			// pois i=1 e j=0
+			// segunda iteração do loop de dentro(innerlen=2):
+			// o segundo valor será 2 pois i=1 e j=1
+			// loop interno acaba, pois o tamanho maximo da segunda slice é 2 elementos
+
+			// terceira iteração do loop de fora(innerLen=3):
+			// primeira iteração:
+			// preenche o primeiro valor do terceiro elemento com:
+			// 2, pois i=2 e j=0
+			// segunda iteração:
+			// preenche o segundo valor do terceiro elemento com:
+			// 3, pois i=2 e j=1
+			// terceira iteração e ultima:
+			// preenche o terceiro valor do terceiro elemento com:
+			// 4, pois i=2 e j=2
+			// loop interno acaba, pois o tamanho maximo da segunda slice é 3 elementos
+			// loop externo acaba;
 		}
 	}
 	fmt.Println(twoD)
