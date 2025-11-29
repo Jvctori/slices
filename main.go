@@ -78,6 +78,7 @@ func main() {
 	fmt.Println(slice1[0])
 
 	// Comparando slices
+	// package "slices": padrão do golang
 	// slices.Equal(slice_a_ser_comparada, slice_de_comparação)
 	// slices.Equal(s1, s2) bool
 	if slices.Equal(slice1, sliceCp) {
